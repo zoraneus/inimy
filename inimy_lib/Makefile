@@ -5,7 +5,7 @@
 ## This is a fairefichier
 ##
 
-ECHO	=	/bin/echo -e
+ECHO	=   /bin/echo -e
 DEFAULT	=	"\e[0m"
 BOLD_T	=	"\e[1m"
 DIM_T	=	"\e[2m"
@@ -32,7 +32,7 @@ COLOR_THEME	=	$(YELLO_C)
 SRC_PATH	=	./
 INCLUDE_PATH	=	../include
 
-SRC	=
+SRC		=	src/ini_line.c
 
 CFLAGS	=	-Wall \
 			-Wextra \
@@ -40,10 +40,11 @@ CFLAGS	=	-Wall \
 			-I $(INCLUDE_PATH) \
 			-L ../filemy_lib \
 			-l filemy \
-			-L ../chainmy_lib \
-			-l chainmy \
 			-L ../stringmy_lib \
-			-l stringmy
+			-l stringmy \
+			-L ../chainmy_lib \
+			-l chainmy
+
 
 DEBUG_FLAGS	=	-g3 -gdwarf-4
 
