@@ -27,7 +27,7 @@ LIGHT_CYAN	=	"\e[96m"
 LINE_RETURN	=	$(ECHO) ""
 
 NAME	=	inimy
-COLOR_THEME	=	$(YELLO_C)
+COLOR_THEME	=	$(GREEN_C)
 
 SRC_PATH	=	./
 INCLUDE_PATH	=	../include
