@@ -26,11 +26,18 @@ struct ini_file {
 };
 typedef struct ini_file ini_file_t;
 
-//ini line gestion
+//------------------ini line memory gestion-----------------------//
 ini_line_t *ini_line_create(char const *str);
 void ini_line_destroy(ini_line_t *entity);
-int ini_line_getcol_nb(ini_line_t *entity);
-char *ini_line_get_from_col(ini_line_t *entity, int col); //return NULL if err
 
+//  ---------------ini_line_operation-----------------------------//
+int ini_line_getcol_nb(ini_line_t *entity);
+
+//   return null if err
+char *ini_line_getstr_from_col(ini_line_t *entity, int col);
+double_chained_t *ini_line_getchain_from_col(ini_line_t *entity, int col);
+
+void ini_line_remove_value(ini_line_t *entity, int col);
+void ini_line_add_value(ini_line_t *entity, int col, int overwrite); //a finir
 
 #endif /* !MY_INI_H_ */

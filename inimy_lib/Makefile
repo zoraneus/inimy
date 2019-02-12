@@ -27,12 +27,14 @@ LIGHT_CYAN	=	"\e[96m"
 LINE_RETURN	=	$(ECHO) ""
 
 NAME	=	inimy
+
 COLOR_THEME	=	$(GREEN_C)
 
 SRC_PATH	=	./
 INCLUDE_PATH	=	../include
 
-SRC		=	src/ini_line.c
+SRC		=	src/ini_line.c \
+			src/ini_line_op.c
 
 CFLAGS	=	-Wall \
 			-Wextra \
