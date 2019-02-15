@@ -29,6 +29,7 @@ typedef struct ini_file ini_file_t;
 //------------------ini line memory gestion-----------------------//
 ini_line_t *ini_line_create(char const *str);
 void ini_line_destroy(ini_line_t *entity);
+char *ini_line_to_str(ini_line_t *entity);
 
 //  ---------------ini_line_operation-----------------------------//
 int ini_line_getcol_nb(ini_line_t *entity);

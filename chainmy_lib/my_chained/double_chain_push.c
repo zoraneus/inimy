@@ -59,24 +59,3 @@ void double_chain_push_before(double_chained_t *link, void *content)
     new->next = link;
     link->prev = new;
 }
-
-void double_chain_debug_desc(double_chained_t *link)
-{
-    double_chained_t *current = link;
-
-    while (current->next != 0) {
-        printf("%s\n", (char*)current->content);
-        current = current->next;
-    }
-    printf("%s\n", (char*)current->content);
-}
-
-void double_chain_debug_asc(double_chained_t *link)
-{
-    double_chained_t *current = link;
-
-    while (current != 0) {
-        printf("%s\n", (char*)current->content);
-        current = current->prev;
-    }
-}
