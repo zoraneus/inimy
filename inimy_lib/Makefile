@@ -34,7 +34,8 @@ SRC_PATH	=	./
 INCLUDE_PATH	=	../include
 
 SRC		=	src/ini_line.c \
-			src/ini_line_op.c
+			src/ini_line_op.c \
+			src/ini_line_add.c
 
 CFLAGS	=	-Wall \
 			-Wextra \

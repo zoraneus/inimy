@@ -32,12 +32,14 @@ void ini_line_destroy(ini_line_t *entity);
 
 //  ---------------ini_line_operation-----------------------------//
 int ini_line_getcol_nb(ini_line_t *entity);
-
 //   return null if err
 char *ini_line_getstr_from_col(ini_line_t *entity, int col);
 double_chained_t *ini_line_getchain_from_col(ini_line_t *entity, int col);
-
+//  --------------------
 void ini_line_remove_value(ini_line_t *entity, int col);
-void ini_line_add_value(ini_line_t *entity, int col, int overwrite); //a finir
+
+//  ---------------ini line add system ----------------------------//
+void ini_line_add_value_from_col(ini_line_t *entity, int col, char const *str);
+void ini_line_push_back_value(ini_line_t *entity, char const *str);
 
 #endif /* !MY_INI_H_ */
