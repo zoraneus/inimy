@@ -35,19 +35,13 @@ INCLUDE_PATH	=	../include
 
 SRC		=	src/ini_line.c \
 			src/ini_line_op.c \
-			src/ini_line_add.c
+			src/ini_line_add.c \
+			src/ini_file_memory.c
 
 CFLAGS	=	-Wall \
 			-Wextra \
 			-Werror \
-			-I $(INCLUDE_PATH) \
-			-L ../filemy_lib \
-			-l filemy \
-			-L ../stringmy_lib \
-			-l stringmy \
-			-L ../chainmy_lib \
-			-l chainmy
-
+			-I $(INCLUDE_PATH)
 
 DEBUG_FLAGS	=	-g3 -gdwarf-4
 

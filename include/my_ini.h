@@ -22,7 +22,7 @@ typedef struct ini_line ini_line_t;
 //double vector_line contain ini_line*
 struct ini_file {
     double_vector_t *lines;
-    int size;
+    char *path;
 };
 typedef struct ini_file ini_file_t;
 
@@ -42,5 +42,11 @@ void ini_line_remove_value(ini_line_t *entity, int col);
 //  ---------------ini line add system ----------------------------//
 void ini_line_add_value_from_col(ini_line_t *entity, int col, char const *str);
 void ini_line_push_back_value(ini_line_t *entity, char const *str);
+
+
+//-------------------ini file memory gestion-----------------------//
+ini_file_t *ini_file_create(char const *str);
+ini_file_t *ini_file_create_from_file(char const *path);
+void ini_file_destroy(ini_file_t *entity);
 
 #endif /* !MY_INI_H_ */
