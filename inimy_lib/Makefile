@@ -33,10 +33,12 @@ COLOR_THEME	=	$(GREEN_C)
 SRC_PATH	=	./
 INCLUDE_PATH	=	../include
 
-SRC		=	src/ini_line.c \
+SRC		=	src/ini_line_mem.c \
 			src/ini_line_op.c \
+			src/ini_line_conv.c \
 			src/ini_line_add.c \
-			src/ini_file_memory.c
+			src/ini_file_memory.c \
+			src/ini_file_op.c
 
 CFLAGS	=	-Wall \
 			-Wextra \
