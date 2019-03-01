@@ -46,4 +46,11 @@ void ini_line_push_back_value(ini_line_t *entity, char const *str);
 //  ---------------ini line conversion -----------------------------//
 char *ini_line_to_str(ini_line_t *entity);
 
+// -----------------------ini file --------------------------------//
+ini_file_t *ini_file_create();
+ini_file_t *ini_file_create_from_str(char const *str);
+ini_file_t *ini_file_create_from_file(char const *path);
+void ini_file_destroy(ini_file_t *file);
+
+
 #endif /* !MY_INI_H_ */
