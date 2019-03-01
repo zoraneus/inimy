@@ -52,5 +52,8 @@ ini_file_t *ini_file_create_from_str(char const *str);
 ini_file_t *ini_file_create_from_file(char const *path);
 void ini_file_destroy(ini_file_t *file);
 
+// ---------------------ini file write sys ------------------------//
+void ini_file_write_from_path(ini_file_t *ini, char const *path);
+void ini_file_write(ini_file_t *ini);
 
 #endif /* !MY_INI_H_ */
