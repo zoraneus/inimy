@@ -16,6 +16,8 @@ static double_vector_t *get_values_from_line(char const *line)
     while (line[i] != '[')
         i++;
     i++;
+    if (line[i] == ']')
+        return (vect);
     while (line[i-1] != ']') {
         while (line[i] != ']' && line[i] != ';') {
             i++;

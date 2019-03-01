@@ -15,8 +15,10 @@ char *my_file_readall(char const *filepath)
 
     if (fd == -1 || read(fd, buffer, size) != size) {
         free(buffer);
+        close(fd);
         return (0);
     }
+    close(fd);
     buffer[size] = '\0';
     return (buffer);
 }

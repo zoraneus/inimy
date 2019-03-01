@@ -49,6 +49,8 @@ char *ini_line_to_str(ini_line_t *entity);
 //-------------------ini file memory gestion-----------------------//
 ini_file_t *ini_file_create(char const *str);
 ini_file_t *ini_file_create_from_file(char const *path);
+void ini_file_write(ini_file_t *entity);
+void ini_file_write_from_path(ini_file_t *entity, char const *path);
 void ini_file_destroy(ini_file_t *entity);
 
 //------------------ini file op (return 0 if err)--------------------//
