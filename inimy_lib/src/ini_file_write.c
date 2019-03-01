@@ -9,18 +9,22 @@
 
 void ini_file_write_from_path(ini_file_t *ini, char const *path)
 {
+    fd_t fd = open(path, O_RDWR | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
     double_chained_t *current = ini->lines->start;
-    ini_line_t *current_content = (ini_line_t*)current->content;
+    ini_line_t *current_content = (ini_line_t *)current->content;
     char *to_write;
 
+    if (fd == -1)
+        exit(85);
     while (current != 0) {
         current_content = current->content;
         to_write = ini_line_to_str(current_content);
-        write(0, to_write, my_strlen(to_write));
-        write(0, "\n", 1);
+        write(fd, to_write, my_strlen(to_write));
+        write(fd, "\n", 1);
         free(to_write);
         current = current->next;
     }
+    close(fd);
 }
 
 void ini_file_write(ini_file_t *ini)

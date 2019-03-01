@@ -49,7 +49,7 @@ ini_file_t *ini_file_create_from_file(char const *path)
 void ini_file_destroy(ini_file_t *file)
 {
     double_chained_t *current = file->lines->start;
-    ini_line_t *current_content = (ini_line_t*)current->content;
+    ini_line_t *current_content = (ini_line_t *)current->content;
 
     while (current) {
         ini_line_destroy(current_content);
