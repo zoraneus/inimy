@@ -38,7 +38,8 @@ SRC		=	src/ini_line_mem.c \
 			src/ini_line_conv.c \
 			src/ini_line_add.c \
 			src/ini_file_memory.c \
-			src/ini_file_write.c
+			src/ini_file_write.c \
+			src/ini_file_find.c
 
 CFLAGS	=	-Wall \
 			-Wextra \

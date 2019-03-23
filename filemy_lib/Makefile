@@ -32,12 +32,15 @@ COLOR_THEME	=	$(YELLO_C)
 SRC_PATH	=	./
 INCLUDE_PATH	=	../include
 
-SRC		=	my_file/my_file_readall.c \
-			my_file/my_file_size.c
+SRC	=	my_file/my_file_readall.c \
+		my_file/my_file_size.c \
+		my_rights/common_rights.c \
+		my_rights/exec_rights.c \
+		my_rights/read_rights.c \
+		my_rights/write_rights.c 
 
 CFLAGS	=	-Wall \
 			-Wextra \
-			-Werror \
 			-I $(INCLUDE_PATH)
 
 DEBUG_FLAGS	=	-g3 -gdwarf-4
@@ -50,12 +53,12 @@ all:	message $(NAME)
 
 message:
 	@$(LINE_RETURN)
-	@$(ECHO) $(BOLD_T)$(COLOR_THEME)"  ___________.___.____     ___________    _____         " $(DEFAULT)
-	@$(ECHO) $(BOLD_T)$(COLOR_THEME)"  \_   _____/|   |    |    \_   _____/   /     \ ___.__." $(DEFAULT)
-	@$(ECHO) $(BOLD_T)$(COLOR_THEME)"   |    __)  |   |    |     |    __)_   /  \ /  <   |  |" $(DEFAULT)
-	@$(ECHO) $(BOLD_T)$(COLOR_THEME)"   |     \   |   |    |___  |        \ /    Y    \___  |" $(DEFAULT)
-	@$(ECHO) $(BOLD_T)$(COLOR_THEME)"   \___  /   |___|_______ \/_______  / \____|__  / ____|" $(DEFAULT)
-	@$(ECHO) $(BOLD_T)$(COLOR_THEME)"       \/                \/        \/          \/\/     " $(DEFAULT)
+	@$(ECHO) $(BOLD_T)$(COLOR_THEME)" _     _ _                          " $(DEFAULT)
+	@$(ECHO) $(BOLD_T)$(COLOR_THEME)"| |   (_) |__  _ __ __ _ _ __ _   _ " $(DEFAULT)
+	@$(ECHO) $(BOLD_T)$(COLOR_THEME)"| |   | | '_ \| '__/ _\` | '__| | | |" $(DEFAULT)
+	@$(ECHO) $(BOLD_T)$(COLOR_THEME)"| |___| | |_) | | | (_| | |  | |_| |" $(DEFAULT)
+	@$(ECHO) $(BOLD_T)$(COLOR_THEME)"|_____|_|_.__/|_|  \__,_|_|   \__, |" $(DEFAULT)
+	@$(ECHO) $(BOLD_T)$(COLOR_THEME)"                              |___/ " $(DEFAULT)
 	@$(LINE_RETURN)
 
 $(NAME):	$(OBJ)
@@ -86,4 +89,4 @@ debug: all
 		$(ECHO) $(DIM_T) "cc $(CFLAGS) -c "$<$(COLOR_THEME)" -o "$@ $(DEFAULT) || \
 		$(ECHO) "\n"$(MAGEN_C) $(UNDLN_T)$(BOLD_T)"cc $(CFLAGS) -c "$<" -o "$@$(DEFAULT)"\n"
 
-.PHONY: all $(NAME) message clean fclean re debug 
+.PHONY: all $(NAME) message clean fclean re debug

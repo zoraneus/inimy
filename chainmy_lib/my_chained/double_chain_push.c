@@ -44,7 +44,7 @@ void double_chain_push_after(double_chained_t *link, void *content)
 
     if (link->next != 0)
         link->next->prev = new;
-    new->prev = link; 
+    new->prev = link;
     new->next = link->next;
     link->next = new;
 }
