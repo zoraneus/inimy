@@ -15,7 +15,7 @@ void ini_file_write_from_path(ini_file_t *ini, char const *path)
     char *to_write;
 
     if (fd == -1)
-        exit(85);
+        return;
     while (current != 0) {
         current_content = current->content;
         to_write = ini_line_to_str(current_content);
