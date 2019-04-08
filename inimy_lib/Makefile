@@ -5,7 +5,7 @@
 ## This is a fairefichier
 ##
 
-ECHO	=   /bin/echo -e
+ECHO	=	/bin/echo -e
 DEFAULT	=	"\e[0m"
 BOLD_T	=	"\e[1m"
 DIM_T	=	"\e[2m"
@@ -26,20 +26,13 @@ LIGHT_MAGEN	=	"\e[95m"
 LIGHT_CYAN	=	"\e[96m"
 LINE_RETURN	=	$(ECHO) ""
 
-NAME	=	inimy
-
-COLOR_THEME	=	$(GREEN_C)
+NAME	=	my
+COLOR_THEME	=	$(YELLO_C)
 
 SRC_PATH	=	./
 INCLUDE_PATH	=	../include
 
-SRC		=	src/ini_line_mem.c \
-			src/ini_line_op.c \
-			src/ini_line_conv.c \
-			src/ini_line_add.c \
-			src/ini_file_memory.c \
-			src/ini_file_write.c \
-			src/ini_file_find.c
+SRC	=	
 
 CFLAGS	=	-Wall \
 			-Wextra \
@@ -56,12 +49,12 @@ all:	message $(NAME)
 
 message:
 	@$(LINE_RETURN)
-	@$(ECHO) $(BOLD_T)$(COLOR_THEME)".___ _______  .___                 " $(DEFAULT)
-	@$(ECHO) $(BOLD_T)$(COLOR_THEME)"|   |\      \ |   |   _____ ___.__." $(DEFAULT)
-	@$(ECHO) $(BOLD_T)$(COLOR_THEME)"|   |/   |   \|   |  /     <   |  |" $(DEFAULT)
-	@$(ECHO) $(BOLD_T)$(COLOR_THEME)"|   /    |    \   | |  Y Y  \___  |" $(DEFAULT)
-	@$(ECHO) $(BOLD_T)$(COLOR_THEME)"|___\____|__  /___| |__|_|  / ____|" $(DEFAULT)
-	@$(ECHO) $(BOLD_T)$(COLOR_THEME)"            \/            \/\/     " $(DEFAULT)
+	@$(ECHO) $(BOLD_T)$(COLOR_THEME)" _     _ _                          " $(DEFAULT)
+	@$(ECHO) $(BOLD_T)$(COLOR_THEME)"| |   (_) |__  _ __ __ _ _ __ _   _ " $(DEFAULT)
+	@$(ECHO) $(BOLD_T)$(COLOR_THEME)"| |   | | '_ \| '__/ _\` | '__| | | |" $(DEFAULT)
+	@$(ECHO) $(BOLD_T)$(COLOR_THEME)"| |___| | |_) | | | (_| | |  | |_| |" $(DEFAULT)
+	@$(ECHO) $(BOLD_T)$(COLOR_THEME)"|_____|_|_.__/|_|  \__,_|_|   \__, |" $(DEFAULT)
+	@$(ECHO) $(BOLD_T)$(COLOR_THEME)"                              |___/ " $(DEFAULT)
 	@$(LINE_RETURN)
 
 $(NAME):	$(OBJ)
