@@ -26,7 +26,7 @@ LIGHT_MAGEN	=	"\e[95m"
 LIGHT_CYAN	=	"\e[96m"
 LINE_RETURN	=	$(ECHO) ""
 
-NAME	=	my
+NAME	=	inimy
 COLOR_THEME	=	$(YELLO_C)
 
 SRC_PATH	=	./
