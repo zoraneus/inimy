@@ -34,5 +34,9 @@ void ini_line_destroy(ini_line_t *line);
 char *ini_line_to_str(ini_line_t *line);
 
 // ini_file.c
+ini_file_t *ini_file_create(void);
+ini_file_t *ini_file_create_from_str(char *str);
+ini_file_t *ini_file_create_from_file(char *path);
+void ini_file_destroy(ini_file_t *file);
 
 #endif /* !MY_INI_H_ */
