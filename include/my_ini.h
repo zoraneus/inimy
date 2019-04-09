@@ -39,4 +39,5 @@ ini_file_t *ini_file_create_from_str(char *str);
 ini_file_t *ini_file_create_from_file(char *path);
 void ini_file_destroy(ini_file_t *file);
 
+//
 #endif /* !MY_INI_H_ */

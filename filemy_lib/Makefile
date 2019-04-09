@@ -26,18 +26,21 @@ LIGHT_MAGEN	=	"\e[95m"
 LIGHT_CYAN	=	"\e[96m"
 LINE_RETURN	=	$(ECHO) ""
 
-NAME	=	inimy
+NAME	=	filemy
 COLOR_THEME	=	$(YELLO_C)
 
 SRC_PATH	=	./
 INCLUDE_PATH	=	../include
 
-SRC			=	ini_line/ini_line.c \
-				ini_line/ini_line_conversion.c \
+SRC	=	my_file/my_file_readall.c \
+		my_file/my_file_size.c \
+		my_rights/common_rights.c \
+		my_rights/exec_rights.c \
+		my_rights/read_rights.c \
+		my_rights/write_rights.c 
 
 CFLAGS	=	-Wall \
 			-Wextra \
-			-Werror \
 			-I $(INCLUDE_PATH)
 
 DEBUG_FLAGS	=	-g3 -gdwarf-4
@@ -86,4 +89,4 @@ debug: all
 		$(ECHO) $(DIM_T) "cc $(CFLAGS) -c "$<$(COLOR_THEME)" -o "$@ $(DEFAULT) || \
 		$(ECHO) "\n"$(MAGEN_C) $(UNDLN_T)$(BOLD_T)"cc $(CFLAGS) -c "$<" -o "$@$(DEFAULT)"\n"
 
-.PHONY: all $(NAME) message clean fclean re debug 
+.PHONY: all $(NAME) message clean fclean re debug
