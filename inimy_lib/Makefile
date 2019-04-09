@@ -24,7 +24,7 @@ LIGHT_YELLO	=	"\e[93m"
 LIGHT_BLUE	=	"\e[94m"
 LIGHT_MAGEN	=	"\e[95m"
 LIGHT_CYAN	=	"\e[96m"
-LINE_RETURN	=	$(ECHO) ""
+LINE_RETURN	=	$(ECHO)
 
 NAME	=	inimy
 COLOR_THEME	=	$(YELLO_C)
@@ -34,7 +34,8 @@ INCLUDE_PATH	=	../include
 
 SRC			=	ini_line/ini_line.c \
 				ini_line/ini_line_conversion.c \
-				ini_file/ini_file.c
+				ini_file/ini_file.c \
+				ini_file/ini_file_write.c
 
 CFLAGS	=	-Wall \
 			-Wextra \
