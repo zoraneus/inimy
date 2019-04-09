@@ -12,5 +12,5 @@ int main()
 {
     ini_file_t *file = ini_file_create_from_file("map2.ini");
 
-    printf("%s\n", ini_file_to_str(file));
+    ini_file_write_path(file, "map3.ini");
 }

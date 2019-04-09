@@ -44,12 +44,20 @@ char *ini_file_to_str(ini_file_t *file)
     return (buff);
 }
 
-/*void ini_file_write(ini_file_t *file)
+void ini_file_write(ini_file_t *file)
 {
+    char *buff = ini_file_to_str(file);
+    int fd = open(file->path, O_CREAT | O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR);
 
+    write(fd, buff, my_strlen(buff));
+    free(buff);
 }
 
 void ini_file_write_path(ini_file_t *file, char *path)
 {
+    char *buff = ini_file_to_str(file);
+    int fd = open(path, O_CREAT | O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR);
 
-}*/
+    write(fd, buff, my_strlen(buff));
+    free(buff);
+}
