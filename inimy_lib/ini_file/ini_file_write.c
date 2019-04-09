@@ -40,6 +40,7 @@ char *ini_file_to_str(ini_file_t *file)
         buff[offset - 1] = '\n';
         current = current->next;
     }
+    buff[offset - 1] = '\0';
     return (buff);
 }
 

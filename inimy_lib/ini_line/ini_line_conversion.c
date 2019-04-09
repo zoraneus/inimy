@@ -39,7 +39,6 @@ static char *ini_line_non_empty_to_str(ini_line_t *line)
     char *buff = malloc(sizeof(char) * size);
     double_chained_t *current = line->values->start;
 
-    printf("%d\n", size);
     my_strcpy(buff, line->key);
     size = my_strlen(line->key) + 1;
     buff[size - 1] = '[';
