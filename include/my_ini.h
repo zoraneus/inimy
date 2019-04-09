@@ -33,6 +33,9 @@ void ini_line_destroy(ini_line_t *line);
 // ini_line_conversion.c
 char *ini_line_to_str(ini_line_t *line);
 
+// ini_line_get.c
+char *ini_line_get_value_from_col(ini_line_t *line, int col);
+
 // ini_file.c
 ini_file_t *ini_file_create(void);
 ini_file_t *ini_file_create_from_str(char *str);
@@ -43,5 +46,8 @@ void ini_file_destroy(ini_file_t *file);
 char *ini_file_to_str(ini_file_t *file);
 void ini_file_write(ini_file_t *file);
 void ini_file_write_path(ini_file_t *file, char *path);
+
+// ini_file_get.c
+ini_line_t *ini_file_get_from_key(ini_file_t *file, char *key);
 
 #endif /* !MY_INI_H_ */

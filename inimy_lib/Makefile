@@ -35,7 +35,9 @@ INCLUDE_PATH	=	../include
 SRC			=	ini_line/ini_line.c \
 				ini_line/ini_line_conversion.c \
 				ini_file/ini_file.c \
-				ini_file/ini_file_write.c
+				ini_file/ini_file_write.c \
+				ini_line/ini_line_get.c \
+				ini_file/ini_file_get.c
 
 CFLAGS	=	-Wall \
 			-Wextra \

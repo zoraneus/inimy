@@ -12,5 +12,6 @@ int main()
 {
     ini_file_t *file = ini_file_create_from_file("map2.ini");
 
-    ini_file_write_path(file, "map3.ini");
+    char *buff = ini_line_get_value_from_col(ini_file_get_from_key(file, "X_TURRET"), 0);
+    printf("%s\n", buff);
 }
