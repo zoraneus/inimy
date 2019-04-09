@@ -27,7 +27,11 @@ LIGHT_YELLO	=	"\e[93m"
 LIGHT_BLUE	=	"\e[94m"
 LIGHT_MAGEN	=	"\e[95m"
 LIGHT_CYAN	=	"\e[96m"
+<<<<<<< HEAD
 LINE_RETURN	=	$(ECHO)
+=======
+LINE_RETURN	=	$(ECHO) ""
+>>>>>>> redump
 
 NAME	=	executable
 COLOR_THEME	=	$(BLUE_C)
@@ -41,11 +45,24 @@ INCL_PATH	=	$(ROOT_PATH)$(INCL_NAME)
 TESTS_PATH	=	$(ROOT_PATH)$(TESTS_NAME)
 SRC_PATH	=	$(ROOT_PATH)$(SRC_NAME)
 
+<<<<<<< HEAD
 SRC		=	
 
 SRC_LIB		=	
 
 LIB_PATHS	=	filemy_lib
+=======
+SRC			=	
+SRC_LIB		=	inimy \
+				filemy \
+				stringmy \
+				chainmy
+
+LIB_PATHS	=	chainmy_lib \
+				filemy_lib \
+				stringmy_lib \
+				inimy_lib
+>>>>>>> redump
 
 SRCS	=	$(SRC:%=$(SRC_PATH)/%) $(SRC_PATH)/main.c
 OBJ	=	$(SRCS:.c=.o)
@@ -54,6 +71,10 @@ LIB_PATHS_FLAG	=	$(LIB_PATHS:%=-L$(ROOT_PATH)%)
 
 CFLAGS	=	-Wall \
 			-Wextra \
+<<<<<<< HEAD
+=======
+			-Werror \
+>>>>>>> redump
 			-I $(INCL_PATH) \
 			$(LIB_PATHS_FLAG) \
 			$(LIBRARIES)
