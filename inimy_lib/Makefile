@@ -32,7 +32,8 @@ COLOR_THEME	=	$(YELLO_C)
 SRC_PATH	=	./
 INCLUDE_PATH	=	../include
 
-SRC	=	
+SRC			=	ini_line/ini_line.c \
+				ini_line/ini_line_conversion.c
 
 CFLAGS	=	-Wall \
 			-Wextra \
