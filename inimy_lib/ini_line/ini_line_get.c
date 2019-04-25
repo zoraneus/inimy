@@ -9,7 +9,7 @@
 
 char *ini_line_get_value_from_col(ini_line_t *line, int col)
 {
-    double_chained_t *current = line->values->start;
+    link_t *current = line->values->start;
     char *current_content;
 
     for (int i = 0; i < col; i++) {

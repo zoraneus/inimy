@@ -15,13 +15,13 @@
 
 struct ini_line {
     char *key;
-    double_vector_t *values;
+    vector_t *values;
 };
 typedef struct ini_line ini_line_t;
 
 struct ini_file {
     char *path;
-    double_vector_t *lines;
+    vector_t *lines;
 };
 typedef struct ini_file ini_file_t;
 

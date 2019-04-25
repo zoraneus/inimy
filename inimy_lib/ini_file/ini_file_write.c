@@ -10,7 +10,7 @@
 static int file_str_size(ini_file_t *file)
 {
     int size = 0;
-    double_chained_t *current = file->lines->start;
+    link_t *current = file->lines->start;
     ini_line_t *current_content;
     char *buff;
 
@@ -28,7 +28,7 @@ char *ini_file_to_str(ini_file_t *file)
 {
     char *buff = malloc(sizeof(char) * (file_str_size(file)));
     char *to_insert;
-    double_chained_t *current = file->lines->start;
+    link_t *current = file->lines->start;
     ini_line_t *current_content;
     int offset = 0;
 

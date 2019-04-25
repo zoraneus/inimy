@@ -12,7 +12,7 @@ ini_line_t *ini_line_create(char *key)
     ini_line_t *line = malloc(sizeof(ini_line_t));
 
     line->key = my_strdup(key);
-    line->values = double_vector_create();
+    line->values = vector_create();
     return (line);
 }
 
@@ -33,7 +33,7 @@ ini_line_t *ini_line_create_from_str(char *str)
     my_strlen(str) - size_key - 2), ";");
     size_key = 0;
     while (values[size_key]) {
-        double_vector_push_back(line->values, my_strdup(values[size_key]));
+        vector_push_back(line->values, my_strdup(values[size_key]));
         size_key++;
     }
     my_strtok_destroy(values);
@@ -45,7 +45,7 @@ void ini_line_destroy(ini_line_t *line)
     free(line->key);
     while (line->values->size) {
         free(line->values->start->content);
-        double_vector_pop_top(line->values);
+        vector_pop_top(line->values);
     }
     free(line->values);
     free(line);

@@ -10,7 +10,7 @@
 ini_line_t *ini_file_get_from_key(ini_file_t *file, char *key)
 {
     ini_line_t *current_content;
-    double_chained_t *current = file->lines->start;
+    link_t *current = file->lines->start;
 
     while (current) {
         current_content = (ini_line_t *)current->content;

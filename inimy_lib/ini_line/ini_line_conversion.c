@@ -22,7 +22,7 @@ static char *convert_empty(ini_line_t *line)
 static int ini_line_size(ini_line_t *line)
 {
     int size = my_strlen(line->key) + 2;
-    double_chained_t *current = line->values->start;
+    link_t *current = line->values->start;
 
     size += line->values->size - 1;
     while (current) {
@@ -37,7 +37,7 @@ static char *ini_line_non_empty_to_str(ini_line_t *line)
 {
     int size = ini_line_size(line);
     char *buff = malloc(sizeof(char) * size);
-    double_chained_t *current = line->values->start;
+    link_t *current = line->values->start;
 
     my_strcpy(buff, line->key);
     size = my_strlen(line->key) + 1;
