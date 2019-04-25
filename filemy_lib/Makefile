@@ -26,18 +26,17 @@ LIGHT_MAGEN	=	"\e[95m"
 LIGHT_CYAN	=	"\e[96m"
 LINE_RETURN	=	$(ECHO) ""
 
-NAME	=	filemy
-COLOR_THEME	=	$(YELLO_C)
-
-SRC_PATH	=	./
+NAME	        =	filemy
+COLOR_THEME		=	$(YELLO_C)
+DEBUG_THEME     =	$(CYAN_C)
+SRC_PATH		=	./
 INCLUDE_PATH	=	../include
 
-SRC	=	my_file/my_file_readall.c \
-		my_file/my_file_size.c \
-		my_rights/common_rights.c \
-		my_rights/exec_rights.c \
-		my_rights/read_rights.c \
-		my_rights/write_rights.c 
+SRC		=	my_file/my_file_readall.c \
+			my_file/my_file_size.c \
+			my_rights/exec_rights.c \
+			my_rights/read_rights.c \
+			my_rights/write_rights.c
 
 CFLAGS	=	-Wall \
 			-Wextra \
@@ -78,15 +77,15 @@ fclean:	clean
 		$(RED_C)$(BOLD_T)"DELETED: "$(DEFAULT) \
 		$(LIGHT_RED)"Binary lib$(NAME).a"$(DEFAULT)
 
-re:		fclean all
+re:	fclean all
 
 debug: CFLAGS += $(DEBUG_FLAGS)
-debug: COLOR_THEME = $(CYAN_C)
-debug: all
+debug: COLOR_THEME = $(DEBUG_THEME)
+debug: fclean all
 
 %.o: %.c
 	@$(CC) -c $(CFLAGS) -o $@ $< && \
-		$(ECHO) $(DIM_T) "cc $(CFLAGS) -c "$<$(COLOR_THEME)" -o "$@ $(DEFAULT) || \
+		$(ECHO) $(DIM_T) "cc $(CFLAGS) -c "$<$(COLOR_THEME)$(BOLD_T)" -o "$@ $(DEFAULT) || \
 		$(ECHO) "\n"$(MAGEN_C) $(UNDLN_T)$(BOLD_T)"cc $(CFLAGS) -c "$<" -o "$@$(DEFAULT)"\n"
 
 .PHONY: all $(NAME) message clean fclean re debug

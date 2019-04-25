@@ -24,24 +24,23 @@ LIGHT_YELLO	=	"\e[93m"
 LIGHT_BLUE	=	"\e[94m"
 LIGHT_MAGEN	=	"\e[95m"
 LIGHT_CYAN	=	"\e[96m"
-LINE_RETURN	=	$(ECHO)
+LINE_RETURN	=	$(ECHO) ""
 
-NAME	=	inimy
-COLOR_THEME	=	$(YELLO_C)
-
-SRC_PATH	=	./
+NAME	        =	inimy
+COLOR_THEME		=	$(YELLO_C)
+DEBUG_THEME     =	$(CYAN_C)
+SRC_PATH		=	./
 INCLUDE_PATH	=	../include
 
-SRC			=	ini_line/ini_line.c \
-				ini_line/ini_line_conversion.c \
-				ini_file/ini_file.c \
-				ini_file/ini_file_write.c \
-				ini_line/ini_line_get.c \
-				ini_file/ini_file_get.c
+SRC		=	ini_line/ini_line.c \
+			ini_line/ini_line_conversion.c \
+			ini_file/ini_file.c \
+			ini_file/ini_file_write.c \
+			ini_line/ini_line_get.c \
+			ini_file/ini_file_get.c
 
 CFLAGS	=	-Wall \
 			-Wextra \
-			-Werror \
 			-I $(INCLUDE_PATH)
 
 DEBUG_FLAGS	=	-g3 -gdwarf-4
@@ -79,15 +78,15 @@ fclean:	clean
 		$(RED_C)$(BOLD_T)"DELETED: "$(DEFAULT) \
 		$(LIGHT_RED)"Binary lib$(NAME).a"$(DEFAULT)
 
-re:		fclean all
+re:	fclean all
 
 debug: CFLAGS += $(DEBUG_FLAGS)
-debug: COLOR_THEME = $(CYAN_C)
-debug: all
+debug: COLOR_THEME = $(DEBUG_THEME)
+debug: fclean all
 
 %.o: %.c
 	@$(CC) -c $(CFLAGS) -o $@ $< && \
-		$(ECHO) $(DIM_T) "cc $(CFLAGS) -c "$<$(COLOR_THEME)" -o "$@ $(DEFAULT) || \
+		$(ECHO) $(DIM_T) "cc $(CFLAGS) -c "$<$(COLOR_THEME)$(BOLD_T)" -o "$@ $(DEFAULT) || \
 		$(ECHO) "\n"$(MAGEN_C) $(UNDLN_T)$(BOLD_T)"cc $(CFLAGS) -c "$<" -o "$@$(DEFAULT)"\n"
 
-.PHONY: all $(NAME) message clean fclean re debug 
+.PHONY: all $(NAME) message clean fclean re debug
